@@ -23,6 +23,10 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Environment
+.dockerignore
+.env
+
 # .NET Core
 project.lock.json
 project.fragment.lock.json
@@ -40,6 +44,12 @@ ScaffoldingReadMe.txt
 ~$*
 *~
 CodeCoverage/
+.vs
+<<<<<<< HEAD
+DotBox.Database.jfm
+DotBox.Database.dbmdl
+=======
+>>>>>>> 5b86cfb (Initial template)
 
 # MSBuild Binary and Structured Log
 *.binlog
