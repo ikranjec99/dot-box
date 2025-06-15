@@ -23,6 +23,10 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Environment
+.dockerignore
+.env
+
 # .NET Core
 project.lock.json
 project.fragment.lock.json
@@ -40,6 +44,7 @@ ScaffoldingReadMe.txt
 ~$*
 *~
 CodeCoverage/
+.vs
 
 # MSBuild Binary and Structured Log
 *.binlog

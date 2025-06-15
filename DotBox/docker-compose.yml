@@ -1,0 +1,34 @@
+services:
+  dotbox.api:
+    build:
+      context: DotBox.Api
+      dockerfile: Dockerfile
+    container_name: DotBox.API
+    depends_on:
+      - mssql
+    ports:
+      - "8000:80"     # HTTP (optional, for redirect)
+      - "8001:443"    # HTTPS
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    image: ${DOCKER_REGISTRY-}dotboxapi
+
+  mssql:
+      container_name: DotBox.DB
+      image: ${MSSQL_IMAGE}
+      environment:
+        - ACCEPT_EULA=Y
+        - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
+        - MSSQL_PID=${MSSQL_PID}
+        - MSSQL_BACKUP_DIR=${MSSQL_BACKUP_DIR}
+        - MSSQL_LCID=${MSSQL_LCID}
+        - TZ=${MSSQL_TIMEZONE}
+      ports:
+        - "${MSSQL_HOST_PORT}:${MSSQL_CONTAINER_PORT}"
+      restart: unless-stopped
+      volumes:
+        - mssql_data:${MSSQL_VOLUME}
+
+volumes:
+  mssql_data:
