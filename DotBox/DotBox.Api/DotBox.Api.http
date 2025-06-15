@@ -1,0 +1,6 @@
+@DotBox.Api_HostAddress = http://localhost:5134
+
+GET {{DotBox.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

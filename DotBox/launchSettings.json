@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:8001;http://localhost:8000",
+      "serviceActions": {
+        "dotbox.api": "StartDebugging"
+      },
+    }
+  }
+}
