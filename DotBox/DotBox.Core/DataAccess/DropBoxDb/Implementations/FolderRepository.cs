@@ -28,4 +28,13 @@ public class FolderRepository : IFolderRepository
         using var _ = _sqlLogger.Log(sqlConnection, sql, query);
         await sqlConnection.ExecuteAsync(sql, query);
     }
+
+    public async Task Delete(DeleteFolderQuery query)
+    {
+        using var sqlConnection = new SqlConnection(_connectionString);
+        string sql = DropBoxDbLoader.Load("DeleteFolder");
+
+        using var _ = _sqlLogger.Log(sqlConnection, sql, query);
+        await sqlConnection.ExecuteAsync(sql, query);
+    }
 }
