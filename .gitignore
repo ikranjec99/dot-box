@@ -47,6 +47,7 @@ CodeCoverage/
 .vs
 DotBox.Database.jfm
 DotBox.Database.dbmdl
+/data
 
 # MSBuild Binary and Structured Log
 *.binlog
