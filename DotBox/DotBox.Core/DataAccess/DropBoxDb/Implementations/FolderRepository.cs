@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using DotBox.Core.Configuration;
 using DotBox.Core.DataAccess.DropBoxDb.Interfaces;
 using DotBox.Core.DataAccess.DropBoxDb.Models;
@@ -28,7 +28,7 @@ public class FolderRepository : IFolderRepository
         using var _ = _sqlLogger.Log(sqlConnection, sql, query);
         await sqlConnection.ExecuteAsync(sql, query);
     }
-
+    
     public async Task Delete(DeleteFolderQuery query)
     {
         using var sqlConnection = new SqlConnection(_connectionString);

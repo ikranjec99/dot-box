@@ -1,4 +1,4 @@
-﻿using DotBox.Core.DataAccess.DropBoxDb.Models;
+using DotBox.Core.DataAccess.DropBoxDb.Models;
 
 namespace DotBox.Core.DataAccess.DropBoxDb.Interfaces;
 

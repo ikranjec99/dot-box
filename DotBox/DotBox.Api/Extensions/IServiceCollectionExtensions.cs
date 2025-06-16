@@ -1,4 +1,4 @@
-﻿using DotBox.Api.Settings;
+using DotBox.Api.Settings;
 using DotBox.Core.Business.Implementations;
 using DotBox.Core.Business.Interfaces;
 using DotBox.Core.Configuration;
