@@ -85,17 +85,6 @@ public static class IServiceCollectionExtensions
             });
         });
 
-        /*
-services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "My API",
-        Version = "1.0.0"
-    });
-});
-         */
-
         services.AddApiVersioning(options =>
         {
             options.AssumeDefaultVersionWhenUnspecified = true;
