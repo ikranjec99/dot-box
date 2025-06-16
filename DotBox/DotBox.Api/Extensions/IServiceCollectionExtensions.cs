@@ -16,11 +16,13 @@ public static class IServiceCollectionExtensions
 
     private static IServiceCollection AddBusinessLayer(this IServiceCollection services) =>
         services
+            .AddSingleton<IFileHandler, FileHandler>()
             .AddSingleton<IFolderHandler, FolderHandler>()
             .AddSingleton<ISqlLogger, SqlLogger>();
 
     private static IServiceCollection AddDataAccessLayer(this IServiceCollection services) =>
         services
+            .AddSingleton<IFileRepository, FileRepository>()
             .AddSingleton<IFolderRepository, FolderRepository>();
 
     private static IServiceCollection SetupSerilog(
