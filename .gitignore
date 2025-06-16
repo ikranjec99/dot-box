@@ -45,11 +45,8 @@ ScaffoldingReadMe.txt
 *~
 CodeCoverage/
 .vs
-<<<<<<< HEAD
 DotBox.Database.jfm
 DotBox.Database.dbmdl
-=======
->>>>>>> 5b86cfb (Initial template)
 
 # MSBuild Binary and Structured Log
 *.binlog
