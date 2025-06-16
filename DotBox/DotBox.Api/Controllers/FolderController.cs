@@ -1,4 +1,4 @@
-﻿using DotBox.Core.Business.Interfaces;
+using DotBox.Core.Business.Interfaces;
 using DotBox.Core.Business.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +17,13 @@ public class FolderController : ControllerBase
     public async Task<IActionResult> Post([FromBody] CreateFolderRequest request)
     {
         await _folderHandler.Create(request.Name, request.ParentId);
-        return Ok();
+        return Created();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete([FromRoute] long id)
+    {
+        await _folderHandler.Delete(id);
+        return NoContent();
     }
 }

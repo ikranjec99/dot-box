@@ -1,4 +1,4 @@
-﻿using DotBox.Core.Business.Interfaces;
+using DotBox.Core.Business.Interfaces;
 using DotBox.Core.DataAccess.DropBoxDb.Interfaces;
 using DotBox.Core.DataAccess.DropBoxDb.Models;
 using Microsoft.Extensions.Logging;
@@ -25,5 +25,10 @@ public class FolderHandler : IFolderHandler
             Name = name,
             ParentId = parentId,
         });
+    }
+
+    public async Task Delete(long id)
+    {
+        await _folderRepository.Delete(new DeleteFolderQuery { Id = id });
     }
 }
