@@ -4,6 +4,7 @@ using DotBox.Core.DataAccess.DropBoxDb.Interfaces;
 using DotBox.Core.DataAccess.DropBoxDb.Models;
 using DotBox.Core.DataAccess.DropBoxDb.Sql;
 using Microsoft.Data.SqlClient;
+using File = DotBox.Core.DataAccess.DropBoxDb.Models.File;
 
 namespace DotBox.Core.DataAccess.DropBoxDb.Implementations;
 
@@ -36,5 +37,14 @@ public class FileRepository : IFileRepository
 
         using var _ = _sqlLogger.Log(sqlConnection, sql, query);
         await sqlConnection.ExecuteAsync(sql, query);
+    }
+
+    public async Task<IEnumerable<File>> Get(SelectFilesByName query)
+    {
+        using var sqlConnection = new SqlConnection(_connectionString);
+        string sql = DropBoxDbLoader.Load("SelectFileByName");
+
+        using var _ = _sqlLogger.Log(sqlConnection, sql, query);
+        return await sqlConnection.QueryAsync<File>(sql, query);
     }
 }

@@ -11,6 +11,7 @@
     <None Remove="DataAccess\DropBoxDb\Sql\DeleteFolder.sql" />
     <None Remove="DataAccess\DropBoxDb\Sql\InsertFile.sql" />
     <None Remove="DataAccess\DropBoxDb\Sql\InsertFolder.sql" />
+    <None Remove="DataAccess\DropBoxDb\Sql\SelectFileByName.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,9 @@
 
   <ItemGroup>
     <EmbeddedResource Include="DataAccess\DropBoxDb\Sql\InsertFile.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataAccess\DropBoxDb\Sql\SelectFileByName.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

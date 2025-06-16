@@ -2,6 +2,7 @@
 using DotBox.Core.DataAccess.DropBoxDb.Interfaces;
 using DotBox.Core.DataAccess.DropBoxDb.Models;
 using Microsoft.Extensions.Logging;
+using File = DotBox.Core.DataAccess.DropBoxDb.Models.File;
 
 namespace DotBox.Core.Business.Implementations;
 
@@ -30,5 +31,10 @@ public class FileHandler : IFileHandler
     public async Task Delete (long id)
     {
         await _fileRepository.Delete(new DeleteFileQuery { Id = id });
+    }
+
+    public async Task<IEnumerable<File>> Find(string name)
+    {
+        return await _fileRepository.Get(new SelectFilesByName { Name = name });
     }
 }
