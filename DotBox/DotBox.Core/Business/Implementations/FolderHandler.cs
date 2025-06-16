@@ -26,4 +26,9 @@ public class FolderHandler : IFolderHandler
             ParentId = parentId,
         });
     }
+
+    public async Task Delete(long id)
+    {
+        await _folderRepository.Delete(new DeleteFolderQuery { Id = id });
+    }
 }
