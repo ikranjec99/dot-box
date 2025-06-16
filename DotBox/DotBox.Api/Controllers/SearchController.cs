@@ -13,8 +13,8 @@ public class SearchController : ControllerBase
         => _fileHandler = fileHandler;
 
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery] string name)
+    public async Task<IActionResult> Get([FromQuery] long? folderId, [FromQuery] string name)
     {
-        return Ok(await _fileHandler.Find(name));
+        return Ok(await _fileHandler.Find(name, folderId));
     }
 }

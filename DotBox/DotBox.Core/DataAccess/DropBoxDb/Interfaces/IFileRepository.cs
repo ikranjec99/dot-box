@@ -9,5 +9,5 @@ public interface IFileRepository
 
     Task Delete(DeleteFileQuery query);
 
-    Task<IEnumerable<File>> Get(SelectFilesByName query);
+    Task<IEnumerable<File>> Get(SelectFileQuery query);
 }

@@ -33,8 +33,12 @@ public class FileHandler : IFileHandler
         await _fileRepository.Delete(new DeleteFileQuery { Id = id });
     }
 
-    public async Task<IEnumerable<File>> Find(string name)
+    public async Task<IEnumerable<File>> Find(string name, long? folderId)
     {
-        return await _fileRepository.Get(new SelectFilesByName { Name = name });
+        return await _fileRepository.Get(new SelectFileQuery
+        {
+            FolderId = folderId,
+            Name = name
+        });
     }
 }

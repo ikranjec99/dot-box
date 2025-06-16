@@ -39,10 +39,10 @@ public class FileRepository : IFileRepository
         await sqlConnection.ExecuteAsync(sql, query);
     }
 
-    public async Task<IEnumerable<File>> Get(SelectFilesByName query)
+    public async Task<IEnumerable<File>> Get(SelectFileQuery query)
     {
         using var sqlConnection = new SqlConnection(_connectionString);
-        string sql = DropBoxDbLoader.Load("SelectFileByName");
+        string sql = DropBoxDbLoader.Load("SelectFiles");
 
         using var _ = _sqlLogger.Log(sqlConnection, sql, query);
         return await sqlConnection.QueryAsync<File>(sql, query);
