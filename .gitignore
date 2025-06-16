@@ -45,6 +45,8 @@ ScaffoldingReadMe.txt
 *~
 CodeCoverage/
 .vs
+DotBox.Database.jfm
+DotBox.Database.dbmdl
 
 # MSBuild Binary and Structured Log
 *.binlog
